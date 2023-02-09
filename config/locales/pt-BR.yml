@@ -1,0 +1,20 @@
+pt-BR:
+  session:
+    email: Email
+    password: Senha
+    login: Login
+    sign_in: Cadastrar
+    forgot_password: Esqueceu sua senha
+    remember_me: Manter login
+  registration:
+    sign_up: Cadastrar
+    email: Email
+    password: Senha
+    password_confirmation: Confirme sua senha
+    characters_minimum: Mínimo de %{minimum} caracteres
+    login_with_google: Logar com Google
+  password:
+    change_password: Mudar senha
+    new_password: Nova senha
+    repeat_new_password: Repita a nova senha
+    characters_minimum: Mínimo de %{minimum} caracteres
