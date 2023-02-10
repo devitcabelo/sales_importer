@@ -1,26 +1,40 @@
-<h2><%= t('password.change_password') %></h2>
+<div class="container d-flex justify-content-center">
+  <div class="card login">
+    <div class="card-header">
+      <h2><%= t('password.change_password') %></h2>
+    </div>
+    <div class="card-body">
+      <%= form_with model: resource, url: password_path(resource_name), html: { method: :put } do |f| %>
+        <%= render "users/shared/error_messages", resource: resource %>
+        <%= f.hidden_field :reset_password_token %>
 
-<%= form_with model: resource, url: password_path(resource_name), html: { method: :put } do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
-  <%= f.hidden_field :reset_password_token %>
+        <div class="field">
+          <%= f.label t('password.new_password') %><br />
+          <% if @minimum_password_length %>
+            <em><%= t('password.characters_minimum', minimum: @minimum_password_length)%></em><br />
+          <% end %>
+          <div class="input-group">
+            <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class:"form-control" %>
+          </div>
+        </div>
 
-  <div class="field">
-    <%= f.label t('password.new_password') %><br />
-    <% if @minimum_password_length %>
-      <em><%= t('password.characters_minimum', minimum: @minimum_password_length)%></em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+        <div class="field">
+          <%= f.label t('password.repeat_new_password') %><br />
+          <div class="input-group">
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+          </div>
+        </div>
+        
+        <div class="mt-2">
+          <%= render "shared/flashes" %>
+        </div>
+
+        <div class="actions text-center">
+          <%= f.submit t('password.change_password'), class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+
+      <%= render "users/shared/links" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label t('password.repeat_new_password') %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit t('password.change_password') %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
-<%= render "shared/flashes" %>
+</div>

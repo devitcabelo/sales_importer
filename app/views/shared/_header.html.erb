@@ -1,4 +1,11 @@
-<nav class="navbar navbar-light bg-light">
-    <%= image_tag("sales-icon.png", class: 'header-logo') %>
-    <a class="navbar-brand header-brand" href="/">Sales Importer</a>
+<nav class="navbar navbar-light bg-light align-middle">
+    <div class="brand">
+        <%= link_to image_tag("sales-icon.png", class: 'header-logo'), root_path %>
+        <div class="header-brand row">
+            <a class="navbar-brand align-middle" href="/">Sales Importer</a>
+        </div>
+    </div>
+    <% if user_signed_in? %>
+        <%= button_to t("session.logout"), destroy_user_session_path, method: :delete, class: 'btn btn-danger me-2' %>
+    <% end %>
 </nav>

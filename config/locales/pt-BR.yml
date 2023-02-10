@@ -3,6 +3,7 @@ pt-BR:
     email: Email
     password: Senha
     login: Login
+    logout: Sair
     sign_in: Cadastrar
     forgot_password: Esqueceu sua senha
     remember_me: Manter login
@@ -14,7 +15,9 @@ pt-BR:
     characters_minimum: Mínimo de %{minimum} caracteres
     login_with_google: Logar com Google
   password:
-    change_password: Mudar senha
+    change_password: Alterar senha
     new_password: Nova senha
     repeat_new_password: Repita a nova senha
     characters_minimum: Mínimo de %{minimum} caracteres
+    forgot: Esqueceu sua senha
+    send_instructions: Eviar instruções para redefinição de senha
