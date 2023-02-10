@@ -4,5 +4,11 @@ pt-BR:
       models:
         user:
           attributes:
+            email:
+              blank: Email não pode ficar em branco
+              taken: Email já cadastrado
+              not_found: Email não encontrado
+            password:
+              blank: Senha não pode ficar em branco
             reset_password_token:
               invalid: Token de redefinição de senha inválido

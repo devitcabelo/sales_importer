@@ -29,3 +29,15 @@
 .brand {
     display: flex;
 }
+
+.field_with_errors {
+    width: 100%;
+    & > input {
+        border-color: #dc3545;
+    }
+}
+
+.errors {
+    color: #dc3545;
+    padding-left: 1em;
+}
