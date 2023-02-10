@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   root 'devise/sessions#new'
 
   get 'sales', to: 'sales#index'
+  get '/', to: 'sales#index'
 end
