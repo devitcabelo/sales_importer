@@ -1,6 +1,6 @@
 class ImportSalesService
 	require 'csv'
-	
+
 	def initialize(file)
 		@file = file
 	end
@@ -30,14 +30,14 @@ class ImportSalesService
 
 	def validate_numeric_columns(sale, line)
 		unless is_numeric?(sale[2])
-			raise StandardError.new(I18n.t('errors.csv.numeric', column: 4, line: line + 1, value: sale[2]))
+			raise StandardError.new(I18n.t('errors.csv.numeric', column: 3, line: line + 1, value: sale[2]))
 		end
 		unless is_numeric?(sale[3])
-			raise StandardError.new(I18n.t('errors.csv.numeric', column: 5,line: line + 1, value: sale[3]))
+			raise StandardError.new(I18n.t('errors.csv.numeric', column: 4, line: line + 1, value: sale[3]))
 		end
 	end
 
 	def is_numeric?(value)
-		value.to_i.to_s == value
+		Float(value) != nil rescue false
 	end
 end
