@@ -21,3 +21,5 @@ pt-BR:
     characters_minimum: Mínimo de %{minimum} caracteres
     forgot: Esqueceu sua senha
     send_instructions: Eviar instruções para redefinição de senha
+  file:
+    import: Importar arquivo

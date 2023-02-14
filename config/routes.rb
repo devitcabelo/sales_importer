@@ -13,6 +13,9 @@ Rails.application.routes.draw do
 
   root 'devise/sessions#new'
 
-  get 'sales', to: 'sales#index'
-  get '/', to: 'sales#index'
+  resource :sales, only: [:index] do
+    post '/import', on: :collection, to: 'sales#import'
+  end
+
+  get '/', to: 'sales#index', as: :sales_index
 end

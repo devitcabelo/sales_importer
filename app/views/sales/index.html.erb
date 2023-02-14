@@ -1,0 +1,26 @@
+<%= form_tag({action: :import}, multipart: true, method: :post, data: { turbo:false }) do %>
+  <div class='import-file-container mt-4'>
+    <span class='h5 ms-2'>Veja o resultado de suas vendas importando arquivos.</span>
+    <div class='import-file'>
+      <%= file_field_tag :sales, class: 'form-control m-2' %>
+      <%= submit_tag t('file.import'), class: 'btn btn-primary m-2 ms-1' %>
+    </div>
+    <div class="m-2">
+      <%= render "shared/flashes" %>
+    </div>
+  </div>
+  <div>
+    <% if @gross_income %>
+      <div class='gross-income'>
+        <div class='gross-income-value'>R$ <%= @gross_income %></div>
+        <div class='gross-income-label'>Venda importada</div>
+      </div>
+    <% end %>
+    <% if @total_gross_income %>
+      <div class='gross-income'>
+        <div class='gross-income-value'>R$ <%= @total_gross_income %></div>
+        <div class='gross-income-label'>Venda total</div>
+      </div>
+    <% end%>
+  </div>
+<% end %>

@@ -1,0 +1,5 @@
+pt-BR:
+  errors:
+    csv:
+      numeric: "O campo da linha %{line} na coluna %{column} deve ser númerico. Valor atual: %{value}"
+    

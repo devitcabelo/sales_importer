@@ -30,6 +30,32 @@
     display: flex;
 }
 
+.import-file-container {
+    width: 50%;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+.import-file {
+    display: flex;
+}
+
+.gross-income-value {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.gross-income{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.gross-income-label {
+    font-size: 20px;
+    font-weight: 700;
+}
+
 .field_with_errors {
     width: 100%;
     & > input {

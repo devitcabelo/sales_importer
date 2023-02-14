@@ -11,6 +11,7 @@ module SalesImporter
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
     config.i18n.default_locale= :'pt-BR'
+    config.eager_load_paths << Rails.root.join("services")
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -18,6 +19,5 @@ module SalesImporter
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
   end
 end
