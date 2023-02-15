@@ -1,24 +1,53 @@
-# README
+# Sales Importer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sales Importer is a simple importer made with Rails 7.0.4.2 to import a sale file tab separated.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+### Dependencies
 
-* System dependencies
+- Ruby 3.2.0
+- Rails 7.0.4.2
+- MySQL 8.0.32
 
-* Configuration
+#### 1. Check out the repository
 
-* Database creation
+```bash
+git@github.com:devitcabelo/sales_importer.git
+```
 
-* Database initialization
+#### 2. Edit database.yml file
 
-* How to run the test suite
+Edit the database configuration to your local settings.
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+config/database.yml
+```
 
-* Deployment instructions
+#### 3. Create and setup the database
 
-* ...
+Run the following commands to create and setup the database.
+
+```ruby
+rake db:create
+rake db:migrate
+```
+
+#### 4. Start the Rails server
+
+You can start the rails server using the command given below.
+
+```ruby
+rails s
+```
+
+
+And now you can visit the site with the URL http://localhost:3000
+
+#### 5. Tests
+
+You can test the application by running the command given below.
+
+```ruby
+rspec
+```
